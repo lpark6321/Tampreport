@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Tampreport
 // @namespace	http://tampermonkey.net/
-// @version		0.1
+// @version		1.0
 // @description	For innolux temperature reprot.
 // @author		Ethan.Huang
 // @match		*://*/*
