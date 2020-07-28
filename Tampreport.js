@@ -1,16 +1,18 @@
 // ==UserScript==
-// @name		Tampreport
-// @namespace	http://tampermonkey.net/
-// @version		1.0
-// @description	For innolux temperature reprot.
-// @author		Ethan.Huang
-// @match		*://*/*
-// @include		http://hrrecruit.innolux.com/rms_inviteletter/*
-// @require     https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js
-// @grant 		GM_openInTab
-// @grant 		GM.getValue
-// @grant 		GM.setValue
-// @grant 		GM.deleteValue
+// @name			Tampreport
+// @namespace		http://tampermonkey.net/
+// @version			1.1
+// @updateURL		https://github.com/lpark6321/Tampreport/blob/master/Tampreport.js
+// @@downloadURL	https://github.com/lpark6321/Tampreport/blob/master/Tampreport.js
+// @description		For innolux temperature reprot.
+// @author			Ethan.Huang
+// @match			*://*/*
+// @include			http://hrrecruit.innolux.com/rms_inviteletter/*
+// @require     	https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js
+// @grant 			GM_openInTab
+// @grant 			GM.getValue
+// @grant 			GM.setValue
+// @grant 			GM.deleteValue
 
 // ==/UserScript==
 // Your code here...
@@ -26,7 +28,8 @@ function closealert(str){
 (async ()=>{
     //'use strict';
     var datetext="";
-    var url=[""]
+    var url=[""
+             ]
 
     function todaydate(){
         datetext = now.getFullYear().toString();
@@ -70,7 +73,7 @@ function closealert(str){
         		console.log("這不是innolux");
                 //GM.deleteValue('check');
                 url.forEach(i =>GM_openInTab(i,false));
-       		}else if(location.href.match("http://hrrecruit.innolux.com/rms_inviteletter/")){
+       		}else if(location.href.match("http://hrrecruit.innolux.com/")){
                 //if(crosstag==now.getDate().toString()){console.log("跨網頁大成功");}
 	            document.getElementById("TitleLB").innerText = "腳本啟動中ヽ(●´∀`●)ﾉ";
 	            todaydate();
@@ -85,7 +88,7 @@ function closealert(str){
 	            }
         	}
         }else{
-            if(location.href.match("http://hrrecruit.innolux.com/rms_inviteletter/")){
+            if(location.href.match("http://hrrecruit.innolux.com/")){
                 document.getElementById("TitleLB").innerText = "腳本啟動中ヽ(●´∀`●)ﾉ";
             }
         	console.log("現在不是打卡時間: "+now.getHours());
